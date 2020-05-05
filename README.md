@@ -7,28 +7,25 @@ To build this app locally use:
 docker-compose build
 ```
 
+you can run pytests to check tak endpoints are fine:
+```bash
+docker-compose run web pytest
+```
+
 Then you can start it with:
 ```bash
 docker-compose up
 ```
 
-Also you can run pytests
-Then you can start it with:
-```bash
-docker-compose run web pytest
-```
-
-## Usage
+## Use of Endpoints
 
 ### A Swagger API
-For a first overview of all available endpoints, see Swagger:
-```url
+For a first overview of all available endpoints, see Swagger
 http://localhost:5000/apidocs/
-```
 
-#### Endpoints:
 
 #### 1. 'POST' Endpoint for creating new "tasks"
+Note that you must open a new terminal because the API must be up.
 To create a new task, use the terminal and enter the curl command as below:
 ```bash
 curl -i -H "Content-Type: application/json" -X POST -d '{"content":"Read a book"}' http://localhost:5000/todo/
@@ -36,11 +33,11 @@ curl -i -H "Content-Type: application/json" -X POST -d '{"content":"Read a book"
 
 #### 2. 'GET' Endpoint for reading individual task.
 To see individual task use browser and enter the url:
-```url
 http://localhost:5000/task/1
-```
+
 
 #### 3. 'PUT' Endpoint for updating individual tasks
+Note that like for 'POST' you must open a new terminal or use POST the same, because the API must be up.
 To update task, use the terminal and enter the curl command as below:
 ```bash
 curl -i -H "Content-Type: application/json" -X PUT -d '{"done":true}' http://localhost:5000/task/1
@@ -48,9 +45,8 @@ curl -i -H "Content-Type: application/json" -X PUT -d '{"done":true}' http://loc
 
 #### 4. 'GET' Endpoint for reading all tasks.
 To see all tasks use browser and enter the url:
-```url
 http://localhost:5000/tasks/
-```
+
 
 ### Dependencies
 
